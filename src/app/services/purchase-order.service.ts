@@ -7,7 +7,7 @@ import { PurchaseOrder } from '../models/purchase-order.model';
   providedIn: 'root'
 })
 export class PurchaseOrderService {
-  private apiUrl = '/api/purchase-orders';
+  private apiUrl = 'https://buy2pay-main.onrender.com/api/purchase-orders';
 
   constructor(private http: HttpClient) {}
 

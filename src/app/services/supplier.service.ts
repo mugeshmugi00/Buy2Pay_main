@@ -7,7 +7,7 @@ import { Supplier } from '../models/supplier.model';
   providedIn: 'root'
 })
 export class SupplierService {
-  private apiUrl = '/api/suppliers';
+  private apiUrl = 'https://buy2pay-main.onrender.com/api/suppliers';
 
   constructor(private http: HttpClient) {}
 

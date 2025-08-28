@@ -7,7 +7,7 @@ import { AnalyticsDashboard, SupplierPerformance } from '../models/analytics.mod
   providedIn: 'root'
 })
 export class AnalyticsService {
-  private apiUrl = '/api/analytics';
+  private apiUrl = 'https://buy2pay-main.onrender.com/api/analytics';
 
   constructor(private http: HttpClient) {}
 

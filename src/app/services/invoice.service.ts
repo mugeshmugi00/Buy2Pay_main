@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class InvoiceService {
-  private apiUrl = '/api/invoices';
-  private paymentsUrl = '/api/payments';
+  private apiUrl = 'https://buy2pay-main.onrender.com/api/invoices';
+  private paymentsUrl = 'https://buy2pay-main.onrender.com/api/payments';
 
   constructor(private http: HttpClient) {}
 

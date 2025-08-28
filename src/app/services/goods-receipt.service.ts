@@ -7,7 +7,7 @@ import { GoodsReceipt } from '../models/goods-receipt.model';
   providedIn: 'root'
 })
 export class GoodsReceiptService {
-  private apiUrl = '/api/goods-receipts';
+  private apiUrl = 'https://buy2pay-main.onrender.com/api/goods-receipts';
 
   constructor(private http: HttpClient) {}
 
