@@ -7,7 +7,7 @@ import { Requisition, CreateRequisitionRequest } from '../models/requisition.mod
   providedIn: 'root'
 })
 export class RequisitionService {
-  private apiUrl = '/api/requisitions';
+  private apiUrl = 'https://buy2pay-main.onrender.com/api/requisitions';
 
   constructor(private http: HttpClient) {}
 

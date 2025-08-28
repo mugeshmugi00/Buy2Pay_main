@@ -10,7 +10,8 @@ import { User, LoginRequest, LoginResponse, RegisterRequest } from '../models/us
 export class AuthService {
   private currentUserSubject: BehaviorSubject<User | null>;
   public currentUser: Observable<User | null>;
-  private apiUrl = '/api/auth'; // API URL for authentication
+  // Change this to your full backend URL:
+  private apiUrl = 'https://buy2pay-main.onrender.com/api/auth'; // <-- updated
 
   constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<User | null>(
