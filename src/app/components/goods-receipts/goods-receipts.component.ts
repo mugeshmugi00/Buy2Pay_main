@@ -487,7 +487,7 @@ export class GoodsReceiptsComponent implements OnInit {
       status: 'submitted'
     };
     
-    this.http.post<any>('http://localhost:3000/api/invoices', invoiceData).subscribe({
+    this.http.post<any>('https://buy2pay-main.onrender.com/api/invoices', invoiceData).subscribe({
       next: (invoice: any) => {
         console.log('Invoice created automatically:', invoice);
       },
