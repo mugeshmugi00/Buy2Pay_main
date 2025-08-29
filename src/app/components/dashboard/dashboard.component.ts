@@ -125,11 +125,11 @@ import { AnalyticsDashboard } from '../../models/analytics.model';
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <div 
             *ngIf="canAccess(['requester', 'admin'])"
-            class="p-6 rounded-lg shadow hover:shadow-md transition-shadow cursor-pointer border-l-4 border-blue-500"style="background-color: #1E3A8A;"
+            class="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow cursor-pointer border-l-4 border-blue-500"
             (click)="navigate('requisitions')"
           >
             <h3 class="text-lg font-semibold text-gray-900 mb-2">Requisitions</h3>
-            <p class="text-sm"style="color:white;">Create and manage purchase requisitions</p>            
+            <p class="text-sm text-gray-600">Create and manage purchase requisitions</p>            
             <div class="mt-4 text-2xl font-bold text-blue-600">
               {{ analytics.summary.totalRequisitions }}
             </div>
@@ -138,11 +138,10 @@ import { AnalyticsDashboard } from '../../models/analytics.model';
           <div 
             *ngIf="canAccess(['approver', 'admin'])"
             class="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow cursor-pointer border-l-4 border-green-500"
-            style="background-color: #1E3A8A;"
             (click)="navigate('approvals')"
           >
             <h3 class="text-lg font-semibold text-gray-900 mb-2">Approvals</h3>
-            <p class="text-sm "style="color:white">Review and approve requisitions</p>
+            <p class="text-sm text-gray-600">Review and approve requisitions</p>
             <div class="mt-4 text-2xl font-bold text-green-600">
               {{ analytics.summary.approvedRequisitions }}
             </div>
@@ -150,7 +149,7 @@ import { AnalyticsDashboard } from '../../models/analytics.model';
 
           <div 
             *ngIf="canAccess(['buyer', 'admin'])"
-            class="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow cursor-pointer border-l-4 border-green-500"
+            class="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow cursor-pointer border-l-4 border-yellow-500"
             (click)="navigate('purchase-orders')"
           >
             <h3 class="text-lg font-semibold text-gray-900 mb-2">Purchase Orders</h3>
