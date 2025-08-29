@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InvoiceService {
-  private apiUrl = 'https://buy2pay-main.onrender.com/api/invoices';
-  private paymentsUrl = 'https://buy2pay-main.onrender.com/api/payments';
+  private apiUrl = `${environment.apiBaseUrl}/invoices`;
+  private paymentsUrl = `${environment.apiBaseUrl}/payments`;
 
   constructor(private http: HttpClient) {}
 

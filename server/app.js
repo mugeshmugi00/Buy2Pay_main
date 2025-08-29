@@ -18,7 +18,6 @@ const allowedOrigins = [
 
 app.use(cors({
   origin: function (origin, callback) {
-    // allow requests with no origin (like mobile apps, curl, etc.)
     if (!origin) return callback(null, true);
     if (allowedOrigins.indexOf(origin) === -1) {
       const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
@@ -331,8 +330,10 @@ app.post('/api/auth/login', async (req, res) => {
 app.post('/api/requisitions', authenticateToken, checkRole(['requester', 'admin']), async (req, res) => {
   try {
     const requisitionNumber = 'REQ-' + Date.now();
+    // When creating a requisition
     const requisition = new Requisition({
       ...req.body,
+      totalAmount: Number(req.body.totalAmount), // force to number
       requisitionNumber,
       requesterId: req.user.userId,
       requesterName: req.user.name
@@ -354,7 +355,7 @@ app.get('/api/requisitions', authenticateToken, async (req, res) => {
 
     const requisitions = await Requisition.find(query)
       .populate('requesterId', 'name email')
-      .sort({ createdAt: -1 });
+      .sort({ totalAmount: -1 });
     res.json(requisitions);
   } catch (error) {
     res.status(500).json({ error: error.message });

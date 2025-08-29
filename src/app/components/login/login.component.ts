@@ -85,6 +85,20 @@ export class LoginComponent {
     });
   }
 
+  ngOnInit(): void {
+   this.getLoginPoint();
+  }
+
+  getLoginPoint(){
+    console.log(window.location.href);
+    if(window.location.href.includes('localhost')){
+      this.authService.apiUrl = 'http://localhost:3000/api/auth';
+    } else {
+      this.authService.apiUrl = 'https://buy2pay-main.onrender.com/api/auth';
+    }
+    
+  }
+
   onSubmit(): void {
     if (this.loginForm.invalid) return;
 

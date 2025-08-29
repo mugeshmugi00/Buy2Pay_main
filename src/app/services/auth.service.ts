@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User, LoginRequest, LoginResponse, RegisterRequest } from '../models/user.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,7 @@ import { User, LoginRequest, LoginResponse, RegisterRequest } from '../models/us
 export class AuthService {
   private currentUserSubject: BehaviorSubject<User | null>;
   public currentUser: Observable<User | null>;
-  // Change this to your full backend URL:
-  private apiUrl = 'https://buy2pay-main.onrender.com/api/auth'; // <-- updated
+  public apiUrl = `${environment.apiBaseUrl}/auth`;
 
   constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<User | null>(

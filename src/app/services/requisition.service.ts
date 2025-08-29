@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Requisition, CreateRequisitionRequest } from '../models/requisition.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RequisitionService {
-  private apiUrl = 'https://buy2pay-main.onrender.com/api/requisitions';
+  private apiUrl = `${environment.apiBaseUrl}/requisitions`;
 
   constructor(private http: HttpClient) {}
 
